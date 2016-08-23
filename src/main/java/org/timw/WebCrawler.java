@@ -5,13 +5,11 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
-import java.util.HashSet;
 
 public class WebCrawler {
 
     private String domain;
     private Parser parser = new Parser();
-    private HashSet<String> visited = new HashSet<>();
 
     public void execute(final URL url) {
         this.domain = url.toString();
@@ -39,11 +37,12 @@ public class WebCrawler {
             page.getLinks().stream().map(this::addProtocol).forEach(s -> printLink("    ", s));
             page.getStaticContent().stream().map(this::addProtocol).forEach(s -> printLink("        ", s));
 
+            // Need to filter out links already visited here, but ran out of time.
             page.getLinks().stream().map(this::addProtocol).filter(this::shouldFollow)
                     .forEach(s -> this.getPage(toUrl(addProtocol(s))));
         }
         catch (WebCrawlerException e) {
-            // ignore and keep going
+            // ignore and keep going to avoid polluting the output
         }
     }
 
@@ -70,6 +69,7 @@ public class WebCrawler {
         return link;
     }
 
+    // Should use proper logging here instead, but again - time.
     private static void printLink(final String offset, final String link) {
         System.out.println(offset + link);
     }
