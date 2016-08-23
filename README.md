@@ -5,7 +5,7 @@
 * Apache Maven
 * JDK 8
 
-To build, from the project root directory run:
+To build, from the project root directory (containing pom.xml) run:
     
     mvn clean package
     
