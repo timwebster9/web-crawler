@@ -47,5 +47,9 @@ The output will display the root page with no indent, page links with a single i
             https://fig.bbc.co.uk/frameworks/fig/1/fig.js
             http://static.bbci.co.uk/frameworks/barlesque/3.20.4/orb/4/script/orb/api.min.js
 
-**NOTE:**  The application will probably run forever because I ran out of time before I could implement a 'history' feature, and recursive linking will probably occur.  It can be stopped with Ctrl+C.
+## NOTES  
+*The application will probably run forever because I ran out of time before I could implement a 'history' feature, and recursive linking will probably occur.  It can be stopped with Ctrl+C.
+*'real' logging would normally be used intead of stdout
+* Not enough tests!
+* Would probably also normally use a Spring Boot CommandLineRunner.  The dependency injection makes individual components easier to test in isolation.
 
