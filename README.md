@@ -35,3 +35,15 @@ e.g.
     java -Dhttp.proxyHost=webproxy.mycorp.com -Dhttp.proxyPort=8080 -cp target/web-crawler-1.0-SNAPSHOT.jar org.timw.AppMain http://news.bbc.co.uk
     
 
+The output will display the root page with no indent, page links with a single indent, and static content with a double indent.  e.g.
+    
+    http://news.bbc.co.uk
+        http://www.bbc.co.uk/news/help-17655000
+        http://www.bbc.co.uk/news/10628323
+        http://www.bbc.co.uk/news/20039682
+        http://www.bbc.co.uk/news/
+            http://news.bbc.co.uk///static.chartbeat.com/js/chartbeat_mab.js
+            http://static.bbci.co.uk/frameworks/requirejs/lib.js
+            https://fig.bbc.co.uk/frameworks/fig/1/fig.js
+            http://static.bbci.co.uk/frameworks/barlesque/3.20.4/orb/4/script/orb/api.min.js
+
