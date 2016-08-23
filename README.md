@@ -22,7 +22,7 @@ e.g.
     
     java -cp target/web-crawler-1.0-SNAPSHOT.jar org.timw.AppMain http://news.bbc.co.uk
     
-### Running with a Proxy Server
+### Running Behind a Proxy Server
 
 If you are behind a proxy server, include the following system properties with appropriate values:
 
