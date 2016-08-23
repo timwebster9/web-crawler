@@ -16,7 +16,7 @@ To run the application, from the project root directory:
     
     java -cp target/web-crawler-1.0-SNAPSHOT.jar org.timw.AppMain <URL>
     
-where <URL> is a URL of your choice.  You must include a protocol prefix (e.g. http://mydomain.com)
+where `<URL>` is a URL of your choice.  **You must include a protocol prefix** (e.g. http://mydomain.com)
 
 e.g.
     
